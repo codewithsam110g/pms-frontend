@@ -26,7 +26,9 @@ const BenefitItem: FC<{
     }
   }, [inView, controls]);
 
-  const IconComponent = Icons[benefit.icon as keyof typeof Icons];
+  const IconComponent = Icons[
+    benefit.icon as keyof typeof Icons
+  ] as React.ElementType;
 
   return (
     <motion.div

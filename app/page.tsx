@@ -16,7 +16,7 @@ export default function Home() {
       <HeroSection />
       <Features />
       <Benefits />
-      <PricingSection plans={pricingPlans} />
+      <PricingSection plans={{plans:pricingPlans}} />
       <FAQSection faqs={faqItems} />
       <Footer/>
     </div>

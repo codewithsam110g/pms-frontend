@@ -30,7 +30,7 @@ export default function Signup() {
           </h2>
           <ul className="space-y-8">
             {perks.map((perk, index) => {
-              const IconComponent = Icons[perk.icon as keyof typeof Icons];
+              const IconComponent = Icons[perk.icon as keyof typeof Icons] as React.ElementType;
               return (
                 <li key={index} className="flex items-start">
                   <div className="mr-4 p-2 bg-primary/10 rounded-full">

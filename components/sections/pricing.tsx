@@ -15,17 +15,17 @@ interface PricingPlan {
   features: string[];
 }
 
-interface PricingSectionProps {
+export interface PricingSectionProps {
   plans: PricingPlan[];
 }
 
-export function PricingSection({ plans }: { plans: any[] }) {
+export function PricingSection({ plans }: { plans: PricingSectionProps }) {
   return (
     <section id="pricing" className="py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12">Pricing Plans</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {plans.map((plan, index) => (
+          {plans.plans.map((plan, index) => (
             <Card key={index} className="flex flex-col">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold">

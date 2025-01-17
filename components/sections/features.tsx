@@ -18,7 +18,7 @@ export const Features: FC = () => {
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {featuresData.features.map((feature, index) => {
-            const IconComponent = Icons[feature.icon as keyof typeof Icons];
+            const IconComponent = Icons[feature.icon as keyof typeof Icons] as React.ElementType;
             return (
               <div
                 key={index}
