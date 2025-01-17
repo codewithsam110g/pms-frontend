@@ -1,0 +1,34 @@
+{
+  "features": [
+    {
+      "icon": "Zap",
+      "name": "Lightning Fast Performance",
+      "description": "Experience blazing-fast load times and responsive interactions that keep your users engaged and productive."
+    },
+    {
+      "icon": "Shield",
+      "name": "Enterprise-Grade Security",
+      "description": "Rest easy with our military-grade encryption and comprehensive security measures protecting your valuable data."
+    },
+    {
+      "icon": "BarChart",
+      "name": "Advanced Analytics",
+      "description": "Make data-driven decisions with our powerful analytics dashboard, providing real-time insights into your business metrics."
+    },
+    {
+      "icon": "Users",
+      "name": "Team Collaboration",
+      "description": "Work seamlessly with your team using our intuitive collaboration tools and real-time communication features."
+    },
+    {
+      "icon": "Workflow",
+      "name": "Automated Workflows",
+      "description": "Streamline your processes with customizable automation tools that save time and reduce manual tasks."
+    },
+    {
+      "icon": "Cloud",
+      "name": "Cloud Integration",
+      "description": "Seamlessly integrate with popular cloud services and scale your infrastructure as your business grows."
+    }
+  ]
+}

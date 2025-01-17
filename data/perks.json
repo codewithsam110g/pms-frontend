@@ -1,0 +1,22 @@
+[
+  {
+    "icon": "Zap",
+    "title": "Lightning Fast",
+    "description": "Experience blazing fast performance with our optimized platform."
+  },
+  {
+    "icon": "Shield",
+    "title": "Secure by Default",
+    "description": "Your data is protected with state-of-the-art security measures."
+  },
+  {
+    "icon": "Headphones",
+    "title": "24/7 Support",
+    "description": "Our dedicated support team is always ready to assist you."
+  },
+  {
+    "icon": "Rocket",
+    "title": "Continuous Updates",
+    "description": "Stay ahead with regular feature updates and improvements."
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "benefits": [
+    {
+      "icon": "Target",
+      "name": "Increased Productivity",
+      "description": "Boost your team's efficiency by up to 40% with our streamlined workflow solutions and intelligent task management."
+    },
+    {
+      "icon": "Wallet",
+      "name": "Cost Effective",
+      "description": "Reduce operational costs while maximizing ROI through our optimized resource allocation and automated processes."
+    },
+    {
+      "icon": "Sparkles",
+      "name": "Enhanced User Experience",
+      "description": "Deliver exceptional experiences to your customers with our intuitive interface and personalized interactions."
+    },
+    {
+      "icon": "Scale",
+      "name": "Scalable Solution",
+      "description": "Grow without limits using our flexible infrastructure that adapts to your business needs, from startup to enterprise."
+    }
+  ]
+}
