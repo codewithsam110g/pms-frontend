@@ -53,10 +53,11 @@ export function LoginForm({
               </div>
 
               {/* Login Button */}
-              <Button type="submit" className="w-full">
-                Login
-              </Button>
-
+              <Link href={"/select_org"}>
+                <Button type="button" className="w-full">
+                  Login
+                </Button>
+              </Link>
               {/* Separator */}
               <div className="relative flex items-center">
                 <span className="w-full h-px bg-gray-300"></span>

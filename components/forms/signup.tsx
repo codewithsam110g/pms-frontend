@@ -47,9 +47,11 @@ export function SignupForm({
               </div>
 
               {/* Signup Button */}
-              <Button type="submit" className="w-full">
-                Signup
-              </Button>
+              <Link href={"/create_profile"}>
+                <Button type="submit" className="w-full">
+                  Signup
+                </Button>
+              </Link>
 
               {/* Separator */}
               <div className="relative flex items-center">
