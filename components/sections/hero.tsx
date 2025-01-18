@@ -24,13 +24,14 @@ export default function HeroSection() {
   return (
     <div
       ref={heroRef}
-      className="min-h-screen flex flex-col justify-start items-start relative overflow-hidden"
+      className="min-h-screen flex flex-col md:flex-row justify-center items-center relative overflow-hidden px-4 bg-gradient-to-b from-background via-accent/50 to-background"
     >
-      <div className="text-left z-10 max-w-xl mt-16 md:mt-24 ml-16 md:ml-24 p-8">
-        <h1 className="text-2xl md:text-4xl font-bold mb-4">
+      {/* Text Section */}
+      <div className="text-center md:text-left z-10 max-w-xl p-8">
+        <h1 className="text-3xl md:text-4xl font-bold mb-4">
           Project Management System
         </h1>
-        <p className="text-lg md:text-xl mb-8">
+        <p className="text-base md:text-xl mb-8">
           The AI-powered project management system that streamlines
           collaboration, automates tasks, and integrates seamlessly with GitHub
           to supercharge your workflow.
@@ -39,15 +40,14 @@ export default function HeroSection() {
           <Button size="lg">Get Started</Button>
         </Link>
       </div>
+
+      {/* Image Section */}
       <div
-        className="absolute transform transition-transform duration-500 ease-out"
+        className="hidden md:flex transform transition-transform duration-500 ease-out"
         style={{
           transform: `perspective(1000px) rotateX(${tiltDegree}deg)`,
-          right: "5%",
-          top: "40%",
           width: "45%",
           maxWidth: "600px",
-          bottom: `${tiltDegree}%`,
         }}
       >
         <Image

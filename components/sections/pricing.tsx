@@ -21,7 +21,10 @@ export interface PricingSectionProps {
 
 export function PricingSection({ plans }: { plans: PricingSectionProps }) {
   return (
-    <section id="pricing" className="py-16 px-4">
+    <section
+      id="pricing"
+      className="py-16 px-4 bg-gradient-to-b from-background via-accent/50 to-background md:bg-none"
+    >
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12">Pricing Plans</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

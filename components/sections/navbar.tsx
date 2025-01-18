@@ -1,8 +1,9 @@
 "use client";
 
 import * as React from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { MoonIcon, SunIcon } from "lucide-react";
+import { MoonIcon, SunIcon, Menu } from "lucide-react";
 import { useTheme } from "next-themes";
 
 import { Button } from "@/components/ui/button";
@@ -12,6 +13,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
 const NavLink = React.forwardRef<
@@ -27,10 +29,16 @@ const NavLink = React.forwardRef<
     {...props}
   />
 ));
+
 NavLink.displayName = "NavLink";
 
 export function Navbar() {
   const { setTheme } = useTheme();
+  const [isSheetOpen, setSheetOpen] = useState(false);
+
+  const handleLinkClick = () => {
+    setSheetOpen(false); // Close sheet when a link is clicked
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full">
@@ -89,6 +97,37 @@ export function Navbar() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+            {/* Mobile Hamburger Menu */}
+            <Sheet open={isSheetOpen} onOpenChange={setSheetOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden">
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Toggle menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent
+                side="top" // Opens the sheet from the top
+                className="h-auto p-4 bg-background shadow-md"
+              >
+                <nav className="flex flex-col gap-4">
+                  <NavLink href="#features" onClick={handleLinkClick}>
+                    Features
+                  </NavLink>
+                  <NavLink href="#benefits" onClick={handleLinkClick}>
+                    Benefits
+                  </NavLink>
+                  <NavLink href="#pricing" onClick={handleLinkClick}>
+                    Pricing
+                  </NavLink>
+                  <NavLink href="#faq" onClick={handleLinkClick}>
+                    Faq
+                  </NavLink>
+                  <Link href="/login" onClick={handleLinkClick}>
+                    <Button>Get Started</Button>
+                  </Link>
+                </nav>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>

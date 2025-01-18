@@ -68,7 +68,9 @@ export function OrganizationSelectForm() {
             Create a New Organization
           </Button>
         </Link>
-        <Button type="submit">Continue</Button>
+        <Link href={"/dashboard"}>
+          <Button type="button">Continue</Button>
+        </Link>
       </div>
     </div>
   );

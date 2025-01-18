@@ -144,7 +144,9 @@ export function OrganizationCreateForm() {
         <Link href={"/select_org"}>
           <Button variant="outline">Back to Select Organization</Button>
         </Link>
-        <Button type="submit">Continue</Button>
+        <Link href={"/dashboard"}>
+          <Button type="button">Continue</Button>
+        </Link>
       </div>
     </div>
   );

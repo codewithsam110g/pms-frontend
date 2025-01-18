@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Design",
+    "description": "Create beautiful, responsive designs using our intuitive tools.",
+    "image": "/images/design.png"
+  },
+  {
+    "title": "Develop",
+    "description": "Build robust applications with our powerful development framework.",
+    "image": "/images/develop.png"
+  },
+  {
+    "title": "Deploy",
+    "description": "Deploy your application with a single click to our global CDN.",
+    "image": "/images/deploy.png"
+  },
+  {
+    "title": "Analyze",
+    "description": "Gain insights into your application's performance and user behavior.",
+    "image": "/images/analyze.png"
+  }
+]

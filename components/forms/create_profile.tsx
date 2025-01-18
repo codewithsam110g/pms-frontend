@@ -192,7 +192,7 @@ export function CreateProfileForm({
               </div>
 
               {/* Continue Button */}
-              <Link href={"/select_profile"}>
+              <Link href={"/select_org"}>
                 <Button type="button" className="w-full">
                   Continue
                 </Button>
