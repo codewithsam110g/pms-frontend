@@ -1,158 +1,185 @@
 "use client";
 
 import * as React from "react";
-import {
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  LifeBuoy,
-  Map,
-  PieChart,
-  Send,
-  Settings2,
-  SquareTerminal,
-} from "lucide-react";
+import * as Icons from "lucide-react";
 
-import { NavMain } from "@/components/ui/nav/main";
-import { NavProjects } from "@/components/ui/nav/projects";
-import { NavSecondary } from "@/components/ui/nav/secondary";
+import { useState, useEffect } from "react";
+
+import { NavSingleBranch } from "@/components/ui/nav/single_branch";
+import { NavNormal } from "@/components/ui/nav/normal";
 import { NavUser } from "@/components/ui/nav/user";
+import ItemSwitcher from "@/components/ui/ItemSwitcher";
+import { Item } from "@/components/ui/ItemSwitcher";
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarHeader,
   SidebarMenu,
-  SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuButton,
+  SidebarFooter,
+  useSidebar,
 } from "@/components/ui/sidebar";
-
-const data = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+import { Command } from "@/components/ui/command";
+import items from "@/data/items.json";
+const sb_data = [
+  {
+    type: "sb",
+    label: "Projects",
+    items: [
+      {
+        title: "Overview",
+        icon: Icons.Home,
+        url_prefix: "projects-overview",
+        isActive: false,
+        items: [
+          { title: "All Tasks", url: "#" },
+          { title: "Milestones", url: "#" },
+          { title: "Sprint Progress", url: "#" },
+        ],
+      },
+      {
+        title: "Tasks & Issues",
+        icon: Icons.CheckSquare,
+        url_prefix: "tasks-issues",
+        isActive: false,
+        items: [
+          { title: "Pending Approvals", url: "#" },
+          { title: "Completed Tasks", url: "#" },
+          { title: "Reported Issues", url: "#" },
+        ],
+      },
+      {
+        title: "Phases",
+        icon: Icons.Layers,
+        url_prefix: "phases",
+        isActive: false,
+        items: [
+          { title: "Design", url: "#" },
+          { title: "Frontend", url: "#" },
+          { title: "Backend", url: "#" },
+          { title: "Deployment", url: "#" },
+        ],
+      },
+      {
+        title: "Testing",
+        icon: Icons.CheckCircle,
+        url_prefix: "testing",
+        isActive: false,
+        items: [
+          { title: "Test Results", url: "#" },
+          { title: "CI/CD Integration", url: "#" },
+        ],
+      },
+    ],
   },
-  navMain: [
-    {
-      title: "Playground",
-      url: "#",
-      icon: SquareTerminal,
-      isActive: true,
-      items: [
-        {
-          title: "History",
-          url: "#",
-        },
-        {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Models",
-      url: "#",
-      icon: Bot,
-      items: [
-        {
-          title: "Genesis",
-          url: "#",
-        },
-        {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Documentation",
-      url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Settings",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
-    },
-  ],
-  navSecondary: [
-    {
-      title: "Support",
-      url: "#",
-      icon: LifeBuoy,
-    },
-    {
-      title: "Feedback",
-      url: "#",
-      icon: Send,
-    },
-  ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
-    },
-  ],
+  {
+    type: "sb",
+    label: "Teams",
+    items: [
+      {
+        title: "Directory",
+        icon: Icons.Users,
+        url_prefix: "directory",
+        isActive: false,
+        items: [
+          { title: "Members", url: "#" },
+          { title: "Roles & Permissions", url: "#" },
+        ],
+      },
+      {
+        title: "Collaboration Metrics",
+        icon: Icons.Activity,
+        url_prefix: "metrics",
+        isActive: false,
+        items: [
+          { title: "Team Velocity", url: "#" },
+          { title: "Contribution Breakdown", url: "#" },
+        ],
+      },
+    ],
+  },
+  {
+    type: "sb",
+    label: "Organization",
+    items: [
+      {
+        title: "Structure",
+        icon: Icons.Building,
+        url_prefix: "structure",
+        isActive: false,
+        items: [
+          { title: "Org Chart", url: "#" },
+          { title: "Resource Allocation", url: "#" },
+        ],
+      },
+      {
+        title: "Updates",
+        icon: Icons.RefreshCw,
+        url_prefix: "updates",
+        isActive: false,
+        items: [
+          { title: "Changelog", url: "#" },
+          { title: "Release Notes", url: "#" },
+        ],
+      },
+    ],
+  },
+  {
+    type: "sb",
+    label: "Collaboration",
+    items: [
+      {
+        title: "Chat",
+        icon: Icons.MessageCircle,
+        url_prefix: "chat",
+        isActive: false,
+        items: [
+          { title: "Direct Messages", url: "#" },
+          { title: "Team Chats", url: "#" },
+        ],
+      },
+      {
+        title: "Meetings",
+        icon: Icons.Calendar,
+        url_prefix: "meetings",
+        isActive: false,
+        items: [
+          { title: "Schedule Meetings", url: "#" },
+          { title: "Meeting Notes", url: "#" },
+        ],
+      },
+    ],
+  },
+];
+
+const norm_data = [
+  {
+    type: "normal",
+    label: "Admin",
+    items: [
+      { name: "Settings", icon: Icons.Settings, url: "/settings" },
+      { name: "Manage Roles", icon: Icons.Key, url: "/roles" },
+      { name: "Audit Logs", icon: Icons.Clock, url: "/audit-logs" },
+      { name: "Logout", icon: Icons.LogOut, url: "/logout" },
+    ],
+  },
+];
+
+
+const user_data = {
+  name: "shadcn",
+  email: "m@example.com",
+  avatar: "/avatars/shadcn.jpg",
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const [isCollapsed, setCollapsed] = useState(false);
+  const { state } = useSidebar();
+  useEffect(() => {
+    setCollapsed(state === "collapsed");
+  }, [state]);
+
   return (
     <Sidebar variant="inset" collapsible="icon" {...props}>
       <SidebarHeader>
@@ -173,12 +200,20 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
-        <NavSecondary items={data.navSecondary} className="mt-auto" />
+        <ItemSwitcher
+          items={items as Item[]}
+          showAvatars={false}
+          isCollapsed={isCollapsed}
+        />
+
+        <NavSingleBranch items={sb_data[0].items} label={sb_data[0].label} />
+        <NavSingleBranch items={sb_data[1].items} label={sb_data[1].label} />
+        <NavSingleBranch items={sb_data[2].items} label={sb_data[2].label} />
+        <NavSingleBranch items={sb_data[3].items} label={sb_data[3].label} />
+        <NavNormal items={norm_data[0].items} label={norm_data[0].label} />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser user={user_data} />
       </SidebarFooter>
     </Sidebar>
   );

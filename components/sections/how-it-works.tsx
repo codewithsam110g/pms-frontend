@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import stepsData from "@/data/how-it-works.json";
+import Image from "next/image";
 
 type Step = {
   title: string;
@@ -41,9 +42,11 @@ export default function HowItWorks() {
                 >
                   <Card className="overflow-hidden">
                     <CardContent className="p-0 flex items-center justify-center">
-                      <img
+                      <Image
                         src={steps[selectedStep].image || "/placeholder.svg"}
                         alt={steps[selectedStep].title}
+                        width={1366}
+                        height={768}
                         className="w-full h-full object-cover"
                       />
                     </CardContent>

@@ -53,7 +53,7 @@ export function LoginForm({
               </div>
 
               {/* Login Button */}
-              <Link href={"/select_org"}>
+              <Link href={"/dashboard"}>
                 <Button type="button" className="w-full">
                   Login
                 </Button>

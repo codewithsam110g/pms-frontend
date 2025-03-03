@@ -1,0 +1,219 @@
+{
+  "user": {
+    "name": "shadcn",
+    "email": "m@example.com",
+    "avatar": "/avatars/shadcn.jpg"
+  },
+  "sidebars": [
+    {
+      "type": "sb",
+      "label": "Projects",
+      "items": [
+        {
+          "title": "Tasks",
+          "icon": "CheckSquare",
+          "url_prefix": "tasks",
+          "isActive":false,
+          "items": [
+            { "title": "All Tasks", "url": "#" },
+            { "title": "Pending Approvals", "url": "#" },
+            { "title": "Completed Tasks", "url": "#" }
+          ]
+        },
+        {
+          "title": "Status",
+          "icon": "BarChart",
+          "url_prefix": "status",
+          "isActive":false,
+          "items": [
+            { "title": "Overview", "url": "#" },
+            { "title": "Milestones", "url": "#" },
+            { "title": "Sprint Progress", "url": "#" }
+          ]
+        },
+        {
+          "title": "Phases",
+          "icon": "Layers",
+          "url_prefix": "phases",
+          "isActive":false,
+          "items": [
+            { "title": "Idea & Design", "url": "#" },
+            { "title": "UI/UX", "url": "#" },
+            { "title": "Frontend", "url": "#" },
+            { "title": "Backend", "url": "#" },
+            { "title": "Scaling", "url": "#" },
+            { "title": "Deployment", "url": "#" }
+          ]
+        },
+        {
+          "title": "Issues",
+          "icon": "AlertCircle",
+          "url_prefix": "issues",
+          "isActive":false,
+          "items": [
+            { "title": "Reported Issues", "url": "#" },
+            { "title": "Linked GitHub Issues", "url": "#" },
+            { "title": "Resolutions", "url": "#" }
+          ]
+        },
+        {
+          "title": "Testing",
+          "icon": "CheckCircle",
+          "url_prefix": "testing",
+          "isActive":false,
+          "items": [
+            { "title": "Test Results", "url": "#" },
+            { "title": "CI/CD Integration", "url": "#" }
+          ]
+        },
+        {
+          "title": "Settings",
+          "icon": "Settings",
+          "url_prefix": "settings",
+          "isActive":false,
+          "items": [
+            { "title": "Project Permissions", "url": "#" },
+            { "title": "Notifications", "url": "#" },
+            { "title": "Webhooks", "url": "#" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sb",
+      "label": "Teams",
+      "items": [
+        {
+          "title": "Directory",
+          "icon": "Users",
+          "url_prefix": "directory",
+          "isActive":false,
+          "items": [
+            { "title": "Members List", "url": "#" },
+            { "title": "Roles & Permissions", "url": "#" }
+          ]
+        },
+        {
+          "title": "Phase Management",
+          "icon": "Briefcase",
+          "url_prefix": "phase-management",
+          "isActive":false,
+          "items": [
+            { "title": "Phase Leads", "url": "#" },
+            { "title": "Active Teams", "url": "#" }
+          ]
+        },
+        {
+          "title": "Collaboration Metrics",
+          "icon": "Activity",
+          "url_prefix": "collaboration-metrics",
+          "isActive":false,
+          "items": [
+            { "title": "PR Stats", "url": "#" },
+            { "title": "Team Velocity", "url": "#" },
+            { "title": "Contribution Breakdown", "url": "#" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sb",
+      "label": "Organization",
+      "items": [
+        {
+          "title": "Overview",
+          "icon": "Home",
+          "url_prefix": "overview",
+          "isActive":false,
+          "items": [
+            { "title": "Departments", "url": "#" },
+            { "title": "KPIs", "url": "#" }
+          ]
+        },
+        {
+          "title": "Structure",
+          "icon": "Building",
+          "url_prefix": "structure",
+          "isActive":false,
+          "items": [
+            { "title": "Org Chart", "url": "#" },
+            { "title": "Resource Allocation", "url": "#" }
+          ]
+        },
+        {
+          "title": "Settings",
+          "icon": "Gear",
+          "url_prefix": "org-settings",
+          "isActive":false,
+          "items": [
+            { "title": "Org Roles", "url": "#" },
+            { "title": "Company Policies", "url": "#" }
+          ]
+        },
+        {
+          "title": "Updates",
+          "icon": "RefreshCw",
+          "url_prefix": "updates",
+          "isActive":false,
+          "items": [
+            { "title": "Changelog", "url": "#" },
+            { "title": "Release Notes", "url": "#" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sb",
+      "label": "Collaboration",
+      "items": [
+        {
+          "name": "Chat",
+          "icon": "MessageCircle",
+          "url_prefix":"/chat",
+          "isActive":false,
+          "items": [
+            { "title": "Direct Messages", "url": "#" },
+            { "title": "Group Chats", "url": "#" },
+            { "title": "Team Chats", "url": "#" },
+            { "title": "Org-wide Chats", "url": "#" }
+          ]
+        },
+        {
+          "name": "Meetings",
+          "icon": "Calendar",
+          "url_prefix":"/meet",
+          "isActive":false,
+          "items": [
+            { "title": "Schedule Meetings", "url": "#" },
+            { "title": "Meeting Notes", "url": "#" },
+            { "title": "Team Availability", "url": "#" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "normal",
+      "label": "Essentials",
+      "items": [
+        { "title": "Support", "icon": "LifeBuoy", "url": "/support" },
+        { "title": "Feedback", "icon": "Send", "url": "/feedback" },
+        {
+          "title": "API Documentation",
+          "icon": "FileText",
+          "url": "/docs"
+        },
+        { "title": "Profile", "icon": "User", "url": "/profile" }
+      ]
+    },
+    {
+      "type": "normal",
+      "label": "Admin",
+      "items": [
+        { "title": "Settings", "icon": "Settings", "url": "/settings" },
+        { "title": "Manage Roles", "icon": "Key", "url": "/roles" },
+        { "title": "Audit Logs", "icon": "Clock", "url": "/audit-logs" },
+        { "title": "Logout", "icon": "LogOut", "url": "/logout" }
+      ]
+    }
+  ]
+}
